@@ -1,0 +1,306 @@
+<style>
+    .stepper-container {
+        position: relative;
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .stepper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2em;
+        gap: 1.5rem;
+        padding: 16px;
+
+        @media (min-width: 992px) {
+            gap: 3rem;
+        }
+
+        @media (min-width: 1200px) {
+            gap: 6rem;
+        }
+    }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 15%;
+        color: rgba(151, 151, 151, .40);
+        cursor: pointer;
+    }
+
+    .step.active {
+        color: #349caf;
+    }
+
+    .icon {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .step-title {
+        text-align: center;
+        background-color: white;
+        font-size: 16px;
+        z-index: 2;
+        width: 100%;
+        color: #232323;
+    }
+
+    .progress-bar-container {
+        position: absolute;
+        bottom: 28px;
+        height: 2.5px;
+        left: 0;
+        right: 0;
+        margin: 0 16px;
+    }
+
+    .progress-bar {
+        position: relative;
+        height: 2.5px;
+        background: rgba(151, 151, 151, .32);
+    }
+
+    .progress {
+        position: absolute;
+        height: 2.5px;
+        background: #349caf;
+        width: 0;
+    }
+
+    @media (max-width: 600px) {
+        .stepper {
+            flex-direction: column;
+        }
+
+        .step {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+    }
+
+
+
+
+
+    .step-detail {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        @media (min-width:768px) {
+            opacity: 0;
+            visibility: hidden;
+            height: 0px;
+            margin-bottom: 0;
+            transition: all 0.7s ease-in-out;
+            transform: translateY(400px);
+        }
+    }
+
+    .step-detail.active {
+        display: flex;
+
+        @media (min-width:768px) {
+            opacity: 1;
+            visibility: visible;
+            height: fit-content;
+            transform: translateY(0px);
+        }
+    }
+
+    .step-details-container h4 {
+        color: #349caf;
+    }
+
+    .step-detail>div:first-child {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width:768px) {
+            display: none;
+        }
+    }
+
+    .step-detail .icon {
+        color: #349caf;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<div class="container py-5">
+    <div class="stepper-container">
+        <div class="section-title-two mb-30">
+            <span class="sub-title">What Makes Us Unique</span>
+            <!-- <h2 class="title">Introducing Hillpine Consulting
+            </h2> -->
+        </div>
+        <div class="stepper">
+            <div class="step active" id="step1">
+                <i class="fa fa-solid fa-globe icon"></i>
+                <span class="step-title">Trust</span>
+            </div>
+            <div class="step" id="step2">
+                <i class="fa fa-solid fa-hand-fist icon"></i>
+                <span class="step-title">Integrity</span>
+            </div>
+            <div class="step" id="step3">
+                <i class="fa fa-solid fa-box-open icon"></i>
+                <span class="step-title">Quality</span>
+            </div>
+            <div class="step" id="step4">
+                <i class="fa fa-solid fa-handshake icon"></i>
+                <span class="step-title">Flexibility</span>
+            </div>
+            <div class="step" id="step5">
+                <i class="fa fa-sharp fa-solid fa-group-arrows-rotate icon"></i>
+                <span class="step-title">Confidentiality</span>
+            </div>
+            <!-- <div class="step" id="step6">
+                <i class="fa fa-redo icon"></i>
+                <span class="step-title">Iterate</span>
+            </div> -->
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="step-details-container">
+        <div class="step-detail active" id="detail1">
+            <div>
+                <i class="fa fa-solid fa-globe icon"></i>
+                <span class="step-title">Trust</span>
+            </div>
+            <div>
+                <h4>Our Sector Know - Importance Of Trust</h4>
+                <p>Trust is the foundation of our business. We strive to build and maintain trust with our clients, partners, and employees by delivering on our commitments, being transparent, and acting with honesty and integrity.</p>
+            </div>
+        </div>
+        <div class="step-detail" id="detail2">
+            <div>
+                <i class="fa fa-solid fa-hand-fist icon"></i>
+                <span class="step-title">Integrity</span>
+            </div>
+            <div>
+                <h4>End-To-End Integrity</h4>
+                <p>Integrity is at the heart of everything we do. We uphold strong ethical standards and always prioritize doing what is right for our clients and stakeholders. Our actions are guided by honesty, fairness, and professionalism.</p>
+            </div>
+        </div>
+        <div class="step-detail" id="detail3">
+            <div>
+                <i class="fa fa-solid fa-box-open icon"></i>
+                <span class="step-title">Quality</span>
+            </div>
+            <div>
+                <h4>Unparalleled and Unique Quality</h4>
+                <p>We are dedicated to delivering excellence in everything we do. We consistently strive for the highest standards of quality, ensuring that our services and solutions meet or exceed our client’s expectations. We take pride in our work and continuously seek opportunities for improvement.</p>
+            </div>
+        </div>
+        <div class="step-detail" id="detail4">
+            <div>
+                <i class="fa fa-solid fa-handshake icon"></i>
+                <span class="step-title">Flexibility</span>
+            </div>
+            <div>
+                <h4>Leveraging our Flexibility</h4>
+                <p>We understand that every client and project is unique. We embrace flexibility to adapt to changing needs and circumstances, tailoring
+                    our approach to suit specific requirements. Our ability to be agile and
+                    responsive sets us apart in delivering optimal solutions.</p>
+            </div>
+        </div>
+        <div class="step-detail" id="detail5">
+            <div>
+                <i class="fa fa-sharp fa-solid fa-group-arrows-rotate icon"></i>
+                <span class="step-title">Confidentiality</span>
+            </div>
+            <div>
+                <h4>Strong Company Confidentiality</h4>
+                <p>We recognize the importance of confidentiality and handle
+                    sensitive information with utmost care and discretion. Client trust is paramount, and we ensure that all data and communications are treated with strict confidentiality, adhering to applicable laws and regulations.</p>
+            </div>
+        </div>
+        <!-- <div class="step-detail" id="detail6">
+            <div>
+                <i class="fa fa-redo icon"></i>
+                <span class="step-title">Iterate</span>
+            </div>
+            <div>
+                <h4>Step 6</h4>
+                <p>Iterate the project. What are the steps you need to take to achieve the goal? What are the
+                    milestones? What are the deadlines?</p>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var steps = document.querySelectorAll('.step');
+        const stepCount = steps.length;
+        var details = document.querySelectorAll('.step-detail');
+        var progress = document.getElementById('progress');
+        var lastActiveStep = null;
+        var lastActiveDetail = null;
+
+        // Set the first step as default (you can change the index if needed)
+        var defaultStep = steps[0];
+        defaultStep.classList.add('active');
+        document.getElementById('detail1').classList.add('active'); // Show default text
+        lastActiveStep = defaultStep;
+        lastActiveDetail = document.getElementById('detail1');
+
+        steps.forEach(function (step, index) {
+            step.addEventListener('mouseenter', function () {
+                if (this === lastActiveStep) return; // Ignore if it's the last active step
+
+                steps.forEach(function (s) {
+                    s.classList.remove('active');
+                });
+
+                details.forEach(function (detail) {
+                    detail.classList.remove('active');
+                });
+
+                this.classList.add('active');
+
+                var stepNumber = this.id.replace('step', '');
+                document.getElementById('detail' + stepNumber).classList.add('active');
+
+                var progressWidth = ((stepNumber - 1) / (stepCount - 1)) * 100;
+                console.log(progressWidth);
+                progress.style.width = progressWidth + '%';
+
+                // Update last active step and detail
+                lastActiveStep = this;
+                lastActiveDetail = document.getElementById('detail' + stepNumber);
+            });
+
+            step.addEventListener('mouseleave', function () {
+                
+                    defaultStep.classList.add('active');
+                    document.getElementById('detail1').classList.add('active'); // Show default text
+                    document.getElementById('detail2').classList.remove('active');
+                    document.getElementById('detail3').classList.remove('active');
+                    document.getElementById('detail4').classList.remove('active');
+                    document.getElementById('detail5').classList.remove('active');
+                
+            });
+        });
+    });
+</script>
+
+
+
