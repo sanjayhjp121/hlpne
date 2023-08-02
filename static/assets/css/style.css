@@ -2709,7 +2709,7 @@ label {
     border-radius: 15px;
 }
 .about-content-eight > p {
-    margin-bottom: 35px;
+    /* margin-bottom: 35px; */
 }
 .about-content-eight .about-content-inner {
     display: flex;
